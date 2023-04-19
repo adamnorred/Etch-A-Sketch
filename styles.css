@@ -10,7 +10,19 @@ body {
 
 .container-main-grid {
     display: flex;
+    /* flex-wrap: wrap; */
     height: 400px;
     width: 400px;
+    max-width: 400px;
+    max-height: 400px;
     background-color: red;
+}
+
+.grid-element {
+    background-color: azure;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    height: 48px;
+    width: 48px;
 }
