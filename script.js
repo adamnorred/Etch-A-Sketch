@@ -1,4 +1,4 @@
-const gridContainerDom = document.querySelector(".container-main-grid");
+const gridContainerSelector = document.querySelector(".container-main-grid");
 let userPrompt = 0;
 
 function getUserPrompt() {
@@ -18,7 +18,7 @@ function makeGrid(number) {
     gridElementDom.classList.add("grid-element");
     gridElementDom.style.height = `calc(${100 / number}% - 2px)`;
     gridElementDom.style.width = `calc(${100 / number}% - 2px)`;
-    gridContainerDom.appendChild(gridElementDom);
+    gridContainerSelector.appendChild(gridElementDom);
   }
 }
 
@@ -26,4 +26,4 @@ getUserPrompt();
 makeGrid(userPrompt);
 
 // check if there is proper grid element count
-const check = gridContainerDom.childElementCount;
+const check = gridContainerSelector.childElementCount;
