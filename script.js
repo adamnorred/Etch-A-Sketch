@@ -3,7 +3,7 @@ let userPrompt = 0;
 
 function getUserPrompt() {
   while (true) {
-    userPrompt = Number(prompt("grid size x*x?"));
+    userPrompt = Number(prompt("type x to make grid x*x"));
     if (userPrompt > 0 && userPrompt < 101) {
       break;
     } else {
@@ -16,8 +16,8 @@ function makeGrid(number) {
   for (let element = 0; element < number * number; element++) {
     const gridElementDom = document.createElement("div");
     gridElementDom.classList.add("grid-element");
-    gridElementDom.style.height = `calc(${100 / number}% - 2px)`;
-    gridElementDom.style.width = `calc(${100 / number}% - 2px)`;
+    gridElementDom.style.height = `calc(${100 / number}%)`;
+    gridElementDom.style.width = `calc(${100 / number}%)`;
     gridContainerSelector.appendChild(gridElementDom);
   }
 }
