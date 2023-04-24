@@ -1,33 +1,54 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-main-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    height: 600px;
-    width: 600px;
-    max-width: 600px;
-    max-height: 600px;
-    background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 600px;
+  width: 600px;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .grid-element {
-    background-color: aliceblue;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    height: 0;
-    width: 0;
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  height: 0;
+  width: 0;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+.slider {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+}
+
+.slider-value {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
