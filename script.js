@@ -1,4 +1,8 @@
 const gridContainerSelector = document.querySelector(".container-main-grid");
+// check in console if there is proper grid element count
+const check = gridContainerSelector.childElementCount;
+const slider = document.querySelector(".slider");
+const sliderText = document.querySelector(".slider-value");
 
 function makeGrid(number) {
   for (let element = 0; element < number * number; element++) {
@@ -18,21 +22,14 @@ function removeGridChildNodes() {
 
 makeGrid(1);
 
-// check in console if there is proper grid element count
-const check = gridContainerSelector.childElementCount;
-
-// slider
-const slider = document.querySelector(".slider");
-const sliderValue = document.querySelector(".slider-value");
-
 slider.addEventListener("input", function () {
-  sliderValue.value = this.value;
+  sliderText.value = this.value;
   removeGridChildNodes();
   makeGrid(this.value);
 });
 
-sliderValue.addEventListener("input", function () {
-  if (sliderValue.value >= 1 && sliderValue.value < 101) {
+sliderText.addEventListener("input", function () {
+  if (sliderText.value >= 1 && sliderText.value < 101) {
     slider.value = this.value;
     removeGridChildNodes();
     makeGrid(this.value);
