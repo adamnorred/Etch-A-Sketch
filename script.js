@@ -28,10 +28,10 @@ makeGrid(userPrompt);
 // check if there is proper grid element count
 const check = gridContainerSelector.childElementCount;
 
-let slider = document.querySelector(".slider");
-let sliderValue = document.querySelector(".slider-value");
-sliderValue.textContent = slider.value;
+const slider = document.querySelector(".slider");
+const sliderValue = document.querySelector(".slider-value");
+sliderValue.value = slider.value;
 
 slider.addEventListener("input", function () {
-  sliderValue.textContent = this.value;
+  sliderValue.value = this.value;
 });
