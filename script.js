@@ -10,16 +10,22 @@ function makeGrid(number) {
     gridElementDom.style.height = `calc(${100 / number}%)`;
     gridElementDom.style.width = `calc(${100 / number}%)`;
     gridContainerSelector.appendChild(gridElementDom);
+    listenForMDown();
   }
 }
 
 function removeGridChildNodes() {
-  while (gridContainerSelector.hasChildNodes()) {
-    gridContainerSelector.removeChild(gridContainerSelector.firstChild);
-  }
+  gridContainerSelector.replaceChildren();
 }
 
-makeGrid(1);
+function listenForMDown() {
+  const allGridElements = document.querySelectorAll(".grid-element");
+  allGridElements.forEach((gridEle) => {
+    gridEle.addEventListener("mouseover", () => {
+      gridEle.style.backgroundColor = "black";
+    });
+  });
+}
 
 slider.addEventListener("input", function () {
   sliderText.value = this.value;
@@ -31,7 +37,7 @@ slider.addEventListener("input", function () {
 });
 
 sliderText.addEventListener("input", function () {
-  if (sliderText.value >= 1 && sliderText.value < 101) {
+  if (sliderText.value >= 1 && sliderText.value <= 16) {
     slider.value = this.value;
     numX.forEach(function (num) {
       num.textContent = slider.value;
