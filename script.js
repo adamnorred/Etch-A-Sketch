@@ -10,7 +10,7 @@ function makeGrid(number) {
     gridElementDom.style.height = `calc(${100 / number}%)`;
     gridElementDom.style.width = `calc(${100 / number}%)`;
     gridContainerSelector.appendChild(gridElementDom);
-    listenForMDown();
+    listenForMOver();
   }
 }
 
@@ -18,7 +18,7 @@ function removeGridChildNodes() {
   gridContainerSelector.replaceChildren();
 }
 
-function listenForMDown() {
+function listenForMOver() {
   const allGridElements = document.querySelectorAll(".grid-element");
   allGridElements.forEach((gridEle) => {
     gridEle.addEventListener("mouseover", () => {
@@ -26,6 +26,8 @@ function listenForMDown() {
     });
   });
 }
+
+makeGrid(1);
 
 slider.addEventListener("input", function () {
   sliderText.value = this.value;
