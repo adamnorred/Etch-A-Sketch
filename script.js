@@ -39,7 +39,7 @@ slider.addEventListener("input", function () {
 });
 
 sliderText.addEventListener("input", function () {
-  if (sliderText.value >= 1 && sliderText.value <= 16) {
+  if (sliderText.value >= 1 && sliderText.value <= 100) {
     slider.value = this.value;
     numX.forEach(function (num) {
       num.textContent = slider.value;
